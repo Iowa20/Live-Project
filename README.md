@@ -320,19 +320,11 @@ I used developer tools to navigate the Divs and the spaces to fix the calendar t
 }
 
 
+
+
 This is the Schedule Index View, that I modified and added some CSS and added some Anchor buttons Edit, Details and Delete Button
 
-@using ManagementPortal.Enums
-@using ManagementPortal.Helpers
-@*Added the two above to get @Html.AnchorButton to work*@
-@using ManagementPortal.Common
-@using ManagementPortal.Models
-@using ManagementPortal.ViewModels
 
-@model Dictionary<Job, List<Schedule>>
-@{
-    ViewBag.Title = "Schedules";
-}
 
 <div class="indexContainer">
     
