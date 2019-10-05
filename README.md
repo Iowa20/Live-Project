@@ -320,7 +320,19 @@ I used developer tools to navigate the Divs and the spaces to fix the calendar t
 }
 
 
-This is the Schedule Index View, that I modified and added some CSS and added the Edit, Details and Delete Button
+This is the Schedule Index View, that I modified and added some CSS and added some Anchor buttons Edit, Details and Delete Button
+
+@using ManagementPortal.Enums
+@using ManagementPortal.Helpers
+@*Added the two above to get @Html.AnchorButton to work*@
+@using ManagementPortal.Common
+@using ManagementPortal.Models
+@using ManagementPortal.ViewModels
+
+@model Dictionary<Job, List<Schedule>>
+@{
+    ViewBag.Title = "Schedules";
+}
 
 <div class="indexContainer">
     
@@ -401,9 +413,20 @@ This is the Schedule Index View, that I modified and added some CSS and added th
 
 
 
-  
+    @*@*Pages*@
+    @*<br />
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
+
+    @****************         Modal Error         *****************@
+
+    @if (ViewBag.ErrorModalVM != null)
+    {
+        @Html.Partial("_ErrorModal", (ManagementPortal.ViewModels.ErrorModalVM)ViewBag.ErrorModalVM)
+    }
+
 </div>
-
-
 
 
