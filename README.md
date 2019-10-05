@@ -3,50 +3,6 @@ For my final project at The Tech Academy, I worked with a development team on a 
 
 Here are th codes for the Calendar Index that I've ressolved.
 I used develpore tools to navigate the Divs and the spaces to fix the calendar to a center position.
-@model ManagementPortal.Models.CalendarEvent
-@{
-    ViewBag.Title = "Index";
-}
-
-
-@*Notes and comments for the developers that come after...
-
---To render this view spin up the project and click on the collapsed time off calendar link within the home page nav bar.  You should see the calender being rendered currently.--
-
-
-This view page currently is utilized as a hub from which to render a custom version of the FullCalendar suggested in the original story.
-Full Calendar has been a project for maybe over 10 years... feel free to research.  Its a great foundation from which you can leverage and customize a really neat calender.
-
-Bringing it into a current version using MVC and Code First and successfully implementing within a large complicated project like this one was challenging.
-
-As it stands you have a working database, a controller, two models, and a current view page.  Feel free to lookover all of them.
-
-This page includes all of the custom html and js that is used to add functionality to your calendar.  You may ultimately end up moving them to the site js page, maybe not.
-
-So you can see what the event forms look like so you understand if you still have rendering issues or not.  I recommend reviewing this tutorial which was a big help to getting started on
-adding CRUD to the calendar.  http://www.dotnetawesome.com/2017/06/event-calendar-in-aspnet-mvc.html  (huge help... check out the forms in part 2 especially how datetimepicker is supposed to render.)
-
-Right now you can click and drag your mouse over 1 day or several to start to create an event.  You can do so in any view.  You can select and edit. Drag and drop... It's very versatile.
-
-The calendar is Functional... The issue after adding it to the project is that the datetimepicker that allows for specific date and/or time selection is not rendering due to some invisible blockage 
-from somewhere.  I ran out of time before I could locate the issue specifically.
-
-I suspect this will all be resolved through front end work customizing the styles for this particular view.
-
-So far attempts to leverage using the BundleConfigs has not worked together with the Shared/_Layout page...
-
-I used the browser inspect tools to play with some alternative css solutions and have a added a couple to the site.css page in order to help you see the calendar as it was transparent after 
-porting my code into the project. 
-
-Don't fall into the trap that it's improper javascripting as that code has been tested successfully outside the project.  I promise it works... just have to figure out how to make it visible.
-
-You may need to research more current versions of full calendar or datetimepicker... I am uncertain.  
-
-Good luck and enjoy.  Make it awesome!!
-
---Eric Byrne--  7/19/19*@ 
-
-@*I included a unique class name to allow for styling for spacing and visibility... feel free to change or remove if it is needed.*@
 
 <h2 class="employee_timeoffcalendar_h2">Employee Time-Off Calendar</h2>
 
