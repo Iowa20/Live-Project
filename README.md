@@ -1,10 +1,10 @@
 # Live-Project
 For my final project at The Tech Academy, I worked with a development team on a full-scale MVC/MVVM in C#. It was a great opportunity to take on a legacy code base, see how the code was laid out, fix bugs, and add requested features. I saw first-hand how an app can evolve over time and outgrow some of the early choices the original developers made while building it. When changing direction on big decisions would require a larger rewrite that the client does not have time for, I saw how good developers can pick up what was there and make the best of the situation to deliver a quality product. We worked together as a team to learn the quirks of how the application was first written and how we could work within those constraints to still deliver the desired what was asked of us. During the two-week project, I worked on several back end stories that I am very proud of. Because much of the site had already been built, there were also a good deal of front end stories and UX improvements that needed to be completed, all of varying degrees of difficulty. We shared the stories available so that everyone on the team would have a chance to work on some front end and some back end content. Over the two week sprint I also had the opportunity to work on some other project management and team programming skills that I'm confident I will use again and again on future projects.
 
-Here are th codes for the Calendar Index that I've ressolved.
-I used develpore tools to navigate the Divs and the spaces to fix the calendar to a center position.
 
 <h2 class="employee_timeoffcalendar_h2">Employee Time-Off Calendar</h2>
+Here are the codes for the Calendar Index that I ressolved.
+I used developer tools to navigate the Divs and the spaces to fix the calendar to a center position.
 
 <div class="row employee_timeoffcalendar_row">
     <div class="col-md-12">
