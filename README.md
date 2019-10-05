@@ -320,4 +320,100 @@ I used developer tools to navigate the Divs and the spaces to fix the calendar t
 }
 
 
+@using ManagementPortal.Enums
+@using ManagementPortal.Helpers
+@*Added the two above to get @Html.AnchorButton to work*@
+@using ManagementPortal.Common
+@using ManagementPortal.Models
+@using ManagementPortal.ViewModels
+
+@model Dictionary<Job, List<Schedule>>
+@{
+    ViewBag.Title = "Schedules";
+}
+
+<div class="indexContainer">
+    
+    <h2>Schedules</h2>
+
+    <p>
+        @Html.Partial(AnchorButtonGroupHelper.PartialView, AnchorButtonGroupHelper.GetCreate())
+    </p>
+    @using (Html.BeginForm("Index", "Schedules", FormMethod.Get))
+
+
+    {
+        <p>
+            @*search box - NOT CONNECTED  - see Schedules Controller 7/26/19 - J.R. *@
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <input type="submit" value="Search" />
+
+            @*show default page button*@
+            <a type="button" class="btn btn-sm" href="@Url.Action("Index")">
+                Show Schedules
+            </a>
+        </p>
+    }
+    @foreach (var Job in Model)
+    {
+        <table class="table table-light rounded-lg">
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(Model => Job.Key.JobTitle)
+                </td>
+                <td>
+
+                    @Html.ActionLink("Details", "Details", "Jobs", new { id = Job.Key.JobIb }, new { @class = "jobDetails" })
+                    @Html.ActionLink("Delete", "Delete", "Jobs", new { id = Job.Key.JobIb }, new { @class = "jobDelete" })
+                </td>
+            </tr>
+        </table>
+
+        <div>
+            <table style="width:100%;">
+                <tr>
+                    <th>Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+
+
+                @foreach (var schedule in Job.Value)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(Model => schedule.Person.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Model => schedule.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Model => schedule.EndDate)
+                        </td>
+                        <td>
+                            @Html.AnchorButton(AnchorType.Edit, Url.Action("Edit", new { id = schedule.ScheduleId }))
+                            @Html.AnchorButton(AnchorType.Details, Url.Action("Details", new { id = schedule.ScheduleId }))
+                            @Html.AnchorButton(AnchorType.Delete, Url.Action("Delete", new { id = schedule.ScheduleId }))
+                        </td>
+                    </tr>
+                }
+
+
+            </table>
+        </div>
+
+
+    }
+
+
+
+
+
+
+  
+</div>
+
+
+
 
